@@ -20,7 +20,8 @@ public static class Task1
             if (choice == "1")
             {
                 foreach (char c in text)
-                {
+                {   
+                    if (c == ' ') continue;
                     result += Encryption(c, key, Alphabet.RomanianAlphabet);
                 }
                 break;
@@ -29,6 +30,7 @@ public static class Task1
             {
                 foreach (char c in text)
                 {
+                    if (c == ' ') continue;
                     result += Decryption(c, key, Alphabet.RomanianAlphabet);
                 }
                 break;

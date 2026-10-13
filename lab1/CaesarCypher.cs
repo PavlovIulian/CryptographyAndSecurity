@@ -6,7 +6,7 @@ public static class CaesarCypher
     {
         int index = Array.IndexOf(alphabet, c);
         if (index == -1) return c;
-
+        
         int shift = (index + key) % alphabet.Length;
         if (shift < 0) shift += alphabet.Length;
 
@@ -17,7 +17,7 @@ public static class CaesarCypher
     {
         int index = Array.IndexOf(alphabet, c);
         if (index == -1) return c;
-
+        
         int shift = (index - key) % alphabet.Length;
         if (shift < 0) shift += alphabet.Length;
 

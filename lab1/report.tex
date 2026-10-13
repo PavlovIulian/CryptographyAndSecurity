@@ -528,17 +528,19 @@ Result: DVQBCFMEDKM
 % ============================================================================
 \section{Conclusions}
 
-In this laboratory work, the classical Caesar cipher and the keyed Caesar cipher with alphabet permutation were studied, implemented, and verified.
+In this laboratory work, the classical Caesar cipher and the keyed Caesar cipher with alphabet permutation were studied, implemented, and verified in C\#. While the classical Caesar cipher provides minimal security due to its small key space of only 29 non-trivial keys ($0 < k < 30$) which can be broken via brute force in milliseconds, the introduction of a keyword permutation ($k_2 \ge 7$) expands the key space to over $3.8 \times 10^{11}$ combinations, effectively preventing manual brute-force attacks. However, because both methods preserve a one-to-one character mapping, they remain inherently vulnerable to frequency analysis attack on natural language statistics. Key software engineering practices, such as safe input validation, structured error logging, and robust modular arithmetic, were successfully demonstrated throughout the implementation.
 
-Key takeaways and cryptographic insights:
-\begin{enumerate}
-    \item \textbf{Insecurity of the Classical Caesar Cipher}: Operating over a 31-character alphabet, the Caesar cipher offers only 29 non-trivial keys ($0 < k < 30$), rendering it trivial to crack via brute-force attack in milliseconds.
-    
-    \item \textbf{Advantage of Keyword Permutation}: Introducing a keyword $k_2$ ($\ge 7$ characters) scrambles the alphabet and expands the key space to over $3.8 \times 10^{11}$ combinations ($P(31, 7) \times 29$), rendering manual brute-force impossible.
-    
-    \item \textbf{Monoalphabetic Vulnerability}: Because the relationship between plaintext letters and ciphertext letters remains 1-to-1 throughout the encryption of a message, both ciphers remain susceptible to \textbf{frequency analysis}. Natural language statistics (such as high occurrences of letters \texttt{E, I, A} in Romanian) are preserved in the ciphertext.
-    
-    \item \textbf{Engineering Lessons}: Safe user input handling with iterative error logging, LINQ-based collection deduplication, and modular arithmetic with boundary corrections were successfully implemented in C\#.
-\end{enumerate}
+% ============================================================================
+% 6. GITHUB REPOSITORY
+% ============================================================================
+\section{GitHub Repository}
+
+The complete source code, project configuration, and documentation for this laboratory work are version-controlled and hosted on GitHub.
+
+\begin{itemize}
+    \item \textbf{Repository URL}: \url{https://github.com/PavlovIulian/CryptographyAndSecurity}
+    \item \textbf{Project}: Cryptography and Security -- Laboratory Work 1
+    \item \textbf{Author}: Iulian Pavlov (FAF-241)
+\end{itemize}
 
 \end{document}

@@ -7,7 +7,7 @@ public static class Logger
 {
     public static bool IsValidKey(int key)
     {
-        return key > 0 && key < 30;
+        return key > 0 && key < 31;
     }
 
     public static bool IsLetterInAlphabet(char c, char[] alphabet)
@@ -28,6 +28,7 @@ public static class Logger
         {
             if (!IsLetterInAlphabet(c, alphabet))
             {
+                if (c == ' ') continue;
                 invalidChar = c;
                 Console.WriteLine($"[Error] '{c}' is not a valid letter in the alphabet.");
                 return false;
@@ -56,7 +57,7 @@ public static class Logger
         return true;
     }
 
-    public static int ReadKey(string prompt = "Enter the key (0 < key < 30): ")
+    public static int ReadKey(string prompt = "Enter the key (0 < key < 31): ")
     {
         while (true)
         {
@@ -100,7 +101,13 @@ public static class Logger
         while (true)
         {
             Console.Write(prompt);
-            string key2 = Console.ReadLine() ?? "";
+            string key2 = (Console.ReadLine() ?? "").Trim();
+
+            if (key2.Length < 7)
+            {
+                Console.WriteLine($"[Error] Key 2 must be at least 7 characters long (you entered {key2.Length}). Try again.");
+                continue;
+            }
 
             if (ValidateKey2(key2, alphabet))
             {
